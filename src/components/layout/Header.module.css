@@ -1,33 +1,104 @@
 .mainHeader {
-  background-color: var(--blanco);
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 20px rgba(15, 76, 51, 0.04);
 }
 
-.headerContainer {
-  max-width: 1360px;
+.topBar {
+  background-color: var(--primary);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.81rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.topBarInner {
+  max-width: 1240px;
   margin: 0 auto;
+  padding: 7px 24px;
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
-  padding-left: 25px;
+  align-items: center;
+}
+
+.topLeft {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.lemaTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  color: var(--gold-soft);
+}
+
+.locationTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.78);
+  padding-left: 18px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topRight a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.topRight a:hover {
+  color: #FFFFFF;
+}
+
+.badgeNivel {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  padding: 2px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+}
+
+/* Barra principal de navegación */
+.navMain {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
 }
 
 .brandBox {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
   text-decoration: none;
-  padding: 10px 15px 10px 0;
   flex-shrink: 0;
 }
 
 .brandLogo {
-  width: 58px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
+  border-radius: 10px;
 }
 
 .brandText {
@@ -36,126 +107,112 @@
 }
 
 .brandTitle {
-  font-size: 1.35rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.24rem;
   font-weight: 800;
-  color: var(--verde-oscuro);
-  line-height: 1.1;
+  color: var(--primary);
+  line-height: 1.15;
 }
 
 .brandSubtitle {
-  font-size: 0.85rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  color: var(--naranja);
-  letter-spacing: 1px;
-}
-
-.navWrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.topGreenBar {
-  background-color: var(--verde-oscuro);
-  color: var(--blanco);
-  width: 96%;
-  padding: 8px 30px;
-  border-bottom-left-radius: 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-}
-
-.lemaTop {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-  color: var(--amarillo);
-}
-
-.topLinks {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.topLinks a {
-  color: var(--blanco);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.topLinks a:hover {
-  color: var(--amarillo);
-}
-
-.badgeNivel {
-  background-color: var(--naranja);
-  color: var(--blanco);
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 0.78rem;
-}
-
-.bottomNavBar {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 12px 30px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
 }
 
 .navMenu {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
 }
 
 .navLink {
   text-decoration: none;
-  color: var(--texto-oscuro);
+  color: var(--text-muted);
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
-  font-size: 0.96rem;
-  padding: 6px 4px;
+  font-size: 0.92rem;
+  padding: 10px 2px;
   position: relative;
-  transition: color 0.3s;
+  transition: color 0.2s ease;
   white-space: nowrap;
 }
 
-.navLink:hover,
+.navLink:hover {
+  color: var(--primary);
+}
+
 .navLink.active {
-  color: var(--verde-oscuro);
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .navLink::after {
   content: "";
   position: absolute;
   left: 0;
+  right: 0;
   bottom: 0;
-  width: 0;
   height: 3px;
-  background-color: var(--naranja);
-  transition: width 0.3s ease;
-  border-radius: 2px;
+  background-color: var(--accent);
+  border-radius: 3px 3px 0 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .navLink:hover::after,
 .navLink.active::after {
-  width: 100%;
+  transform: scaleX(1);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.ctaMatricula {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--accent);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 10px 20px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(217, 98, 43, 0.26);
+  transition: all 0.25s ease;
+}
+
+.ctaMatricula:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(217, 98, 43, 0.34);
+}
+
+.ctaMatriculaActive {
+  background-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(15, 76, 51, 0.25);
+}
+
+.mobileCtaItem {
+  display: none;
 }
 
 .hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 22px;
+  width: 28px;
+  height: 20px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -165,34 +222,39 @@
 .hamburger span {
   display: block;
   width: 100%;
-  height: 3.5px;
-  background-color: var(--verde-oscuro);
+  height: 2.5px;
+  background-color: var(--primary);
   border-radius: 3px;
   transition: all 0.3s ease;
 }
 
 .hamburger.open span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  transform: translateY(8.5px) rotate(45deg);
 }
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
 .hamburger.open span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-8.5px) rotate(-45deg);
 }
 
-@media (max-width: 960px) {
-  .topGreenBar {
+@media (max-width: 1060px) {
+  .locationTop {
     display: none;
   }
 
-  .headerContainer {
-    align-items: center;
-    padding: 10px 20px;
+  .navMenu {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 920px) {
+  .topBar {
+    display: none;
   }
 
-  .bottomNavBar {
-    padding: 0;
+  .ctaMatricula {
+    display: none;
   }
 
   .hamburger {
@@ -204,13 +266,13 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--blanco);
+    background-color: var(--bg-surface);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0;
-    padding: 10px 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-    border-top: 3px solid var(--naranja);
+    padding: 8px 0 16px 0;
+    box-shadow: var(--shadow-lg);
+    border-top: 2px solid var(--primary);
     display: none;
   }
 
@@ -218,18 +280,37 @@
     display: flex;
   }
 
-  .navMenu li {
-    width: 100%;
-  }
-
   .navLink {
     display: block;
-    width: 100%;
-    padding: 14px 25px;
-    border-bottom: 1px solid #F0F2F5;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border-subtle);
   }
 
   .navLink::after {
     display: none;
+  }
+
+  .navLink.active {
+    background-color: var(--primary-tint);
+    border-left: 4px solid var(--accent);
+  }
+
+  .mobileCtaItem {
+    display: block;
+    padding: 16px 24px 4px 24px;
+  }
+
+  .mobileCtaBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background-color: var(--accent);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 999px;
   }
 }

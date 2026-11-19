@@ -1,54 +1,343 @@
-.docentesGrid {
+/* Barra de filtros por grado */
+.filterBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 64px;
+}
+
+.filterBtn {
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.filterBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filterBtnActive {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(15, 76, 51, 0.2);
+}
+
+.filterBtnActive:hover {
+  color: #FFFFFF;
+}
+
+/* Grid de 3 columnas con espacio superior para los avatares flotantes */
+.cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 28px;
+  row-gap: 68px;
 }
 
-.docenteCard {
-  background: var(--blanco);
-  border: 1px solid #E4E7EB;
-  border-radius: 14px;
-  padding: 30px 22px;
+/* Tarjeta limpia tipo perfil */
+.card {
+  background-color: var(--bg-surface);
+  border-radius: 16px;
+  padding: 0 26px 30px 26px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(15, 76, 51, 0.07);
+  box-shadow: 0 10px 28px rgba(15, 76, 51, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.docenteCard:hover {
+.card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  border-color: var(--amarillo);
+  box-shadow: 0 16px 36px rgba(15, 76, 51, 0.11);
 }
 
-.docenteAvatar {
-  width: 82px;
-  height: 82px;
-  margin: 0 auto 14px auto;
-  background-color: var(--gris-fondo);
-  border: 3px solid var(--verde-oscuro);
+/* Avatar circular mitad afuera / mitad adentro */
+.avatarCircle {
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
+  margin-top: -48px;
+  margin-bottom: 18px;
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 6px 18px rgba(15, 76, 51, 0.14);
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--primary-tint);
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatarFallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, var(--primary) 0%, #196847 100%);
+  color: var(--gold-soft);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.6rem;
 }
 
-.gradoBadge {
-  display: inline-block;
-  background-color: var(--amarillo);
-  color: var(--texto-oscuro);
+/* Nombre y Grado */
+.teacherName {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.gradeLabel {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
   font-weight: 700;
-  font-size: 0.8rem;
-  padding: 3px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+/* Bloque compacto de Especialidad + Años de trayectoria */
+.metaBox {
+  width: 100%;
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 9px 12px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.specialtyText {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.expText {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Descripción breve */
+.shortBio {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* Botón delineado inferior estilo editorial */
+.learnMoreBtn {
+  margin-top: auto;
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: 1.5px solid rgba(15, 76, 51, 0.35);
+  background-color: transparent;
+  color: var(--primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.learnMoreBtn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+}
+
+/* Modal limpio para ver la trayectoria completa */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 35, 24, 0.58);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2000;
+}
+
+.modalCard {
+  background-color: var(--bg-surface);
   border-radius: 20px;
-  margin-bottom: 8px;
+  max-width: 520px;
+  width: 100%;
+  padding: 32px;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-subtle);
 }
 
-.docenteCard h3 {
-  color: var(--verde-oscuro);
-  margin-bottom: 6px;
+.closeBtn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-page);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.docenteCard p {
-  font-size: 0.92rem;
-  color: var(--texto-suave);
+.closeBtn:hover {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modalAvatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--primary-tint);
+}
+
+.modalGrade {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
+
+.modalHeader h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+}
+
+.modalTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.modalTag {
+  background-color: var(--primary-tint);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.modalStory {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 960px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modalContactBox {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modalContactTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.modalContactLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.modalContactLink:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-tint);
+  color: var(--primary);
+}
+
+.modalContactIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--primary-tint);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }

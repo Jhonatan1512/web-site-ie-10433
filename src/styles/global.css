@@ -11,73 +11,103 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  color: var(--texto-oscuro);
-  background-color: var(--blanco);
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .section-padding {
-  padding: 75px 0;
+  padding: 88px 0;
 }
 
 .bg-soft {
-  background-color: var(--gris-fondo);
+  background-color: var(--bg-soft);
 }
 
-/* Botones globales reutilizables */
 .btn-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 28px;
-  border-radius: 30px;
+  padding: 13px 28px;
+  border-radius: 999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   text-decoration: none;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.btn-amarillo {
-  background-color: var(--amarillo);
-  color: var(--texto-oscuro);
-}
-
-.btn-amarillo:hover {
-  background-color: var(--amarillo-hover);
-  transform: translateY(-2px);
+  transition: all 0.25s ease;
 }
 
 .btn-naranja {
-  background-color: var(--naranja);
-  color: var(--blanco);
+  background-color: var(--accent);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(217, 98, 43, 0.28);
 }
 
 .btn-naranja:hover {
-  background-color: var(--naranja-hover);
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(217, 98, 43, 0.36);
+}
+
+.btn-glass {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(6px);
+}
+
+.btn-glass:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  border-color: #FFFFFF;
   transform: translateY(-2px);
 }
 
 .btn-whatsapp {
-  background-color: #25D366;
-  color: var(--blanco);
+  background-color: #1F9D55;
+  color: #FFFFFF;
+}
+
+.btn-whatsapp:hover {
+  background-color: #188246;
+  transform: translateY(-2px);
 }
 
 .btn-facebook {
-  background-color: #1877F2;
-  color: var(--blanco);
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.btn-facebook:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
 }
 
 .btn-block {
   width: 100%;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
 }

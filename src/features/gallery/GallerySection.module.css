@@ -9,9 +9,9 @@
 .carouselViewport {
   width: 100%;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
-  border: 4px solid var(--blanco);
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--primary);
 }
 
 .carouselTrack {
@@ -26,7 +26,7 @@
 
 .carouselSlide img {
   width: 100%;
-  height: 440px;
+  height: 450px;
   object-fit: cover;
   display: block;
 }
@@ -36,111 +36,110 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(14, 90, 54, 0.94));
-  color: var(--blanco);
-  padding: 35px 25px 20px 25px;
+  background: linear-gradient(transparent, rgba(11, 56, 37, 0.94));
+  color: #FFFFFF;
+  padding: 40px 28px 22px 28px;
 }
 
 .slideCaption h3 {
-  color: var(--amarillo);
+  color: var(--gold-soft);
   font-size: 1.35rem;
+  margin-bottom: 4px;
 }
 
 .slidePlaceholder {
-  height: 440px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 30px;
-  color: var(--blanco);
+  padding: 36px;
+  color: #FFFFFF;
 }
 
+/* Variaciones tonales elegantes dentro de la paleta dominante */
 .bgVerdeSlide {
-  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-claro));
+  background: linear-gradient(135deg, #0F4C33, #1D6F4D);
 }
 
 .bgNaranjaSlide {
-  background: linear-gradient(135deg, var(--naranja), #FF9800);
+  background: linear-gradient(135deg, #165B3E, #0B3A26);
 }
 
 .bgAmarilloSlide {
-  background: linear-gradient(135deg, #D49B00, var(--amarillo));
-  color: var(--texto-oscuro);
+  background: linear-gradient(135deg, #1F6E4C, #124831);
 }
 
 .slideEmoji {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--gold-soft);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .carouselBtn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--naranja);
-  color: var(--blanco);
-  border: none;
+  background-color: var(--bg-surface);
+  color: var(--primary);
+  border: 1px solid var(--border-subtle);
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   cursor: pointer;
   z-index: 10;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: var(--shadow-md);
+  transition: all 0.25s ease;
 }
 
 .carouselBtn:hover {
-  background-color: var(--verde-oscuro);
-  transform: translateY(-50%) scale(1.08);
+  background-color: var(--primary);
+  color: #FFFFFF;
+  transform: translateY(-50%) scale(1.06);
 }
 
 .prevBtn {
-  left: -20px;
+  left: -22px;
 }
 
 .nextBtn {
-  right: -20px;
+  right: -22px;
 }
 
 .carouselDots {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 18px;
+  gap: 8px;
+  margin-top: 20px;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #CBD2D9;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background-color: rgba(15, 76, 51, 0.22);
   border: none;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .dot.active {
-  background-color: var(--naranja);
-  width: 28px;
-  border-radius: 6px;
+  background-color: var(--accent);
+  width: 26px;
 }
 
 @media (max-width: 960px) {
-  .prevBtn {
-    left: 10px;
-  }
-
-  .nextBtn {
-    right: 10px;
-  }
-
+  .prevBtn { left: 12px; }
+  .nextBtn { right: 12px; }
   .carouselSlide img,
-  .slidePlaceholder {
-    height: 320px;
-  }
+  .slidePlaceholder { height: 320px; }
 }

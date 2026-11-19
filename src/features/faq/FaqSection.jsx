@@ -10,7 +10,7 @@ export function FaqSection() {
     setOpenIndex((prev) => (prev === idx ? null : idx));
   };
 
-  return (
+  return ( 
     <section id="preguntas" className="section-padding">
       <div className="container">
         <SectionHeader tag="Información Útil" title="Preguntas Frecuentes" />

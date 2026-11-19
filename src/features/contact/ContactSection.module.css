@@ -1,43 +1,51 @@
 .contactGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 32px;
 }
 
 .contactInfoCard,
 .contactFormCard {
-  background: var(--blanco);
-  padding: 35px;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  background: var(--bg-surface);
+  padding: 38px;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
 }
 
 .contactInfoCard h3,
 .contactFormCard h3 {
-  color: var(--verde-oscuro);
+  color: var(--text-main);
   font-size: 1.45rem;
   margin-bottom: 12px;
 }
 
+.contactInfoCard > p {
+  color: var(--text-muted);
+}
+
 .infoList {
-  margin: 22px 0;
+  margin: 24px 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .infoRow {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 14px;
 }
 
 .infoIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background-color: var(--primary-tint);
+  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--naranja);
-  margin-top: 2px;
   flex-shrink: 0;
 }
 
@@ -48,30 +56,35 @@
 }
 
 .formGroup {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .formGroup label {
   display: block;
   font-weight: 600;
   margin-bottom: 6px;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
 }
 
 .formGroup input,
 .formGroup textarea {
   width: 100%;
-  padding: 11px 14px;
-  border: 1px solid #CBD2D9;
-  border-radius: 8px;
+  padding: 12px 14px;
+  border: 1px solid rgba(15, 76, 51, 0.18);
+  border-radius: 10px;
+  background-color: var(--bg-page);
   font-family: inherit;
   font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .formGroup input:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: var(--verde-oscuro);
+  background-color: #FFFFFF;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 76, 51, 0.10);
 }
 
 @media (max-width: 960px) {

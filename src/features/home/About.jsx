@@ -18,7 +18,7 @@ export function About() {
             />
             <div className={styles.aboutBadge}>{SCHOOL_INFO.name} • Lajas</div>
           </div>
-
+ 
           <div className={styles.aboutContent}>
             <h3>Comprometidos con la niñez de Lajas</h3>
             <p>

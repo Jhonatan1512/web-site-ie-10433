@@ -1,38 +1,48 @@
 .mvGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  gap: 28px;
 }
 
 .mvCard {
-  background: var(--blanco);
-  padding: 36px;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  background: var(--bg-surface);
+  padding: 40px 36px;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease;
 }
 
-.borderVerde {
-  border-top: 6px solid var(--verde-oscuro);
+.mvCard:hover {
+  transform: translateY(-4px);
 }
 
-.borderNaranja {
-  border-top: 6px solid var(--naranja);
+.borderVerde .mvIcon {
+  background-color: var(--primary-tint);
+  color: var(--primary);
+}
+
+.borderNaranja .mvIcon {
+  background-color: rgba(217, 98, 43, 0.10);
+  color: var(--accent);
 }
 
 .mvIcon {
-  width: 58px;
-  height: 58px;
-  border-radius: 14px;
-  background-color: var(--gris-fondo);
-  color: var(--verde-oscuro);
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .mvCard h3 {
-  font-size: 1.5rem;
-  color: var(--verde-oscuro);
+  font-size: 1.45rem;
+  color: var(--text-main);
   margin-bottom: 12px;
+}
+
+.mvCard p {
+  color: var(--text-muted);
 }

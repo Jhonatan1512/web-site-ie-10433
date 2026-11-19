@@ -1,0 +1,127 @@
+.enrollmentBanner {
+  background: linear-gradient(135deg, var(--primary) 0%, #0A3825 100%);
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 44px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 48px;
+  box-shadow: var(--shadow-lg);
+}
+
+.bannerBadge {
+  display: inline-block;
+  background-color: rgba(245, 200, 76, 0.16);
+  border: 1px solid rgba(245, 200, 76, 0.5);
+  color: var(--gold-soft);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.bannerInfo h3 {
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.bannerInfo p {
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 600px;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.stepCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 30px 26px;
+  box-shadow: var(--shadow-sm);
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--primary-tint);
+  color: var(--primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.stepCard h4 {
+  font-size: 1.15rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.stepCard p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.reqBox {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 36px 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.reqHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: var(--primary);
+}
+
+.reqList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.reqItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: var(--bg-page);
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  font-size: 0.93rem;
+}
+
+.reqIcon {
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 920px) {
+  .enrollmentBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+}

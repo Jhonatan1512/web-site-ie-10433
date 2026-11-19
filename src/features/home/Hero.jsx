@@ -15,13 +15,13 @@ export function Hero() {
             aprendizaje activo, valores y desarrollo de talentos en un entorno seguro.
           </p>
           <div className={styles.heroActions}>
-            <a href="#quienes-somos" className="btn-pill btn-amarillo">
-              Más información
-            </a>
-            <Link to="/galeria" className="btn-pill btn-naranja">
+            <Link to="/nuestra-escuela" className="btn-pill btn-naranja">
+              Conoce nuestra escuela
+            </Link>
+            <Link to="/galeria" className="btn-pill btn-glass">
               Ver Galería
             </Link>
-          </div>
+          </div> 
         </div>
       </div>
     </section>

@@ -1,44 +1,307 @@
+.footerWrapper {
+  margin-top: 48px;
+  position: relative;
+}
+
+.hillsWave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-bottom: -1px; 
+}
+
+.hillsWave svg {
+  display: block;
+  width: 100%;
+  height: 115px;
+}
+
 .mainFooter {
-  background-color: var(--verde-oscuro);
-  color: var(--blanco);
-  padding: 50px 0 20px 0;
-  border-top: 5px solid var(--naranja);
+  background: linear-gradient(180deg, var(--primary) 0%, #093322 100%);
+  color: rgba(255, 255, 255, 0.86);
+  padding: 24px 0 28px 0;
+  position: relative;
+}
+
+.ctaBanner {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 28px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 52px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+.ctaBadge {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-soft);
+  margin-bottom: 6px;
+}
+
+.ctaText h3 {
+  color: #FFFFFF;
+  font-size: 1.45rem;
+  margin-bottom: 4px;
+}
+
+.ctaText p {
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 .footerGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin-bottom: 30px;
+  grid-template-columns: 1.4fr 0.9fr 0.9fr 1.2fr;
+  gap: 36px;
+  margin-bottom: 44px;
 }
 
-.footerGrid h4 {
-  color: var(--amarillo);
-  margin-bottom: 12px;
-  font-size: 1.1rem;
+.brandHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
 }
 
-.footerGrid ul {
+.brandLogo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  padding: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.brandTitle {
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.brandSubtitle {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+.brandDesc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 18px;
+}
+
+.mottoCard {
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--gold);
+  padding: 12px 16px;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 20px;
+}
+
+.mottoQuote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #FFFFFF;
+}
+
+.mottoSub {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gold-soft);
+  margin-top: 2px;
+  padding-left: 24px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 10px;
+}
+
+.socialCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.socialCircle:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.colTitle {
+  color: #FFFFFF;
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.colTitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  height: 2.5px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+.linkList {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.footerGrid ul li {
-  margin-bottom: 6px;
-}
-
-.footerGrid ul a {
-  color: var(--blanco);
+.linkItem a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.78);
   text-decoration: none;
   font-size: 0.92rem;
+  transition: all 0.2s ease;
 }
 
-.footerGrid ul a:hover {
-  color: var(--amarillo);
+.linkIcon {
+  color: var(--gold-soft);
+  transition: transform 0.2s ease;
 }
 
-.footerCopy {
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding-top: 18px;
-  font-size: 0.88rem;
+.linkItem a:hover {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+.linkItem a:hover .linkIcon {
+  color: var(--accent);
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.contactIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gold-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.statusPill {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(31, 157, 85, 0.2);
+  border: 1px solid rgba(72, 187, 120, 0.35);
+  color: #A7F3D0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #34D399;
+  box-shadow: 0 0 8px #34D399;
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.ugelTag {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hillsWave svg {
+    height: 68px;
+  }
+
+  .ctaBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+  }
 }
