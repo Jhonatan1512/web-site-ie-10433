@@ -20,11 +20,11 @@ export const NAV_LINKS = [
   { path: "/galeria", label: "Galería" },
   { path: "/contactos", label: "Contactos" },
 ];
-
+ 
 export const IDENTITY_ITEMS = [
   { title: "1° a 6° Grado", subtitle: "Educación Primaria" },
   { title: "Formación en Valores", subtitle: "Estudio, Disciplina y Trabajo" },
-  { title: "Comunidad Lajina", subtitle: "Chota - Cajamarca" },
+  { title: "Comunidad Lajeña", subtitle: "Chota - Cajamarca" },
 ];
 
 export const VALUES_LIST = [
