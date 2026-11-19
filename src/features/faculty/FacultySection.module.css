@@ -1,0 +1,54 @@
+.docentesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 25px;
+}
+
+.docenteCard {
+  background: var(--blanco);
+  border: 1px solid #E4E7EB;
+  border-radius: 14px;
+  padding: 30px 22px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.docenteCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--amarillo);
+}
+
+.docenteAvatar {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 14px auto;
+  background-color: var(--gris-fondo);
+  border: 3px solid var(--verde-oscuro);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+}
+
+.gradoBadge {
+  display: inline-block;
+  background-color: var(--amarillo);
+  color: var(--texto-oscuro);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.docenteCard h3 {
+  color: var(--verde-oscuro);
+  margin-bottom: 6px;
+}
+
+.docenteCard p {
+  font-size: 0.92rem;
+  color: var(--texto-suave);
+}

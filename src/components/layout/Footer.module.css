@@ -1,0 +1,44 @@
+.mainFooter {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 50px 0 20px 0;
+  border-top: 5px solid var(--naranja);
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footerGrid h4 {
+  color: var(--amarillo);
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.footerGrid ul {
+  list-style: none;
+}
+
+.footerGrid ul li {
+  margin-bottom: 6px;
+}
+
+.footerGrid ul a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.footerGrid ul a:hover {
+  color: var(--amarillo);
+}
+
+.footerCopy {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 18px;
+  font-size: 0.88rem;
+}

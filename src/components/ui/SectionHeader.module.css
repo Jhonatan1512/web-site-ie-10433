@@ -1,0 +1,25 @@
+.sectionHeader {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px auto;
+}
+
+.sectionTag {
+  display: inline-block;
+  color: var(--naranja);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.sectionHeader h2 {
+  font-size: 2.2rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 10px;
+}
+
+.sectionHeader p {
+  color: var(--texto-suave);
+}

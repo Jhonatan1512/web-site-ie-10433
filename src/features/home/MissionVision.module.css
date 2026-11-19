@@ -1,0 +1,38 @@
+.mvGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.mvCard {
+  background: var(--blanco);
+  padding: 36px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.borderVerde {
+  border-top: 6px solid var(--verde-oscuro);
+}
+
+.borderNaranja {
+  border-top: 6px solid var(--naranja);
+}
+
+.mvIcon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background-color: var(--gris-fondo);
+  color: var(--verde-oscuro);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.mvCard h3 {
+  font-size: 1.5rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 12px;
+}

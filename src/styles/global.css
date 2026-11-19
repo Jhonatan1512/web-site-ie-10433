@@ -1,0 +1,83 @@
+@import "./variables.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--texto-oscuro);
+  background-color: var(--blanco);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 75px 0;
+}
+
+.bg-soft {
+  background-color: var(--gris-fondo);
+}
+
+/* Botones globales reutilizables */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-amarillo {
+  background-color: var(--amarillo);
+  color: var(--texto-oscuro);
+}
+
+.btn-amarillo:hover {
+  background-color: var(--amarillo-hover);
+  transform: translateY(-2px);
+}
+
+.btn-naranja {
+  background-color: var(--naranja);
+  color: var(--blanco);
+}
+
+.btn-naranja:hover {
+  background-color: var(--naranja-hover);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: var(--blanco);
+}
+
+.btn-facebook {
+  background-color: #1877F2;
+  color: var(--blanco);
+}
+
+.btn-block {
+  width: 100%;
+}

@@ -1,0 +1,33 @@
+.faqBox {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqItem {
+  border: 1px solid #E4E7EB;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.faqBtn {
+  width: 100%;
+  background: var(--blanco);
+  border: none;
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faqAnswer {
+  padding: 0 22px 18px 22px;
+  color: var(--texto-suave);
+}

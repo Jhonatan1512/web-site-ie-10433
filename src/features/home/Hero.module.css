@@ -1,0 +1,88 @@
+.heroSection {
+  position: relative;
+  background: url('/assets/fachada.jpg') center/cover no-repeat;
+  background-color: var(--verde-oscuro);
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 90, 54, 0.25) 0%,
+    rgba(14, 90, 54, 0.78) 48%,
+    rgba(20, 115, 69, 0.96) 100%
+  );
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  width: 100%;
+  padding: 60px 20px;
+}
+
+.heroTextBox {
+  color: var(--blanco);
+}
+
+.heroTag {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--amarillo);
+  color: var(--amarillo);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.heroTextBox h1 {
+  font-size: 2.9rem;
+  line-height: 1.15;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.heroTextBox p {
+  font-size: 1.08rem;
+  margin-bottom: 28px;
+  opacity: 0.95;
+}
+
+.heroActions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 960px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .heroSpacer {
+    display: none;
+  }
+
+  .heroOverlay {
+    background: rgba(14, 90, 54, 0.85);
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .heroTextBox h1 {
+    font-size: 2.1rem;
+  }
+}

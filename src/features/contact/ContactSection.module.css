@@ -1,0 +1,81 @@
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contactInfoCard,
+.contactFormCard {
+  background: var(--blanco);
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.contactInfoCard h3,
+.contactFormCard h3 {
+  color: var(--verde-oscuro);
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+}
+
+.infoList {
+  margin: 22px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.infoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--naranja);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.socialButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #CBD2D9;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--verde-oscuro);
+}
+
+@media (max-width: 960px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}

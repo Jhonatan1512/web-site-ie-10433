@@ -1,0 +1,29 @@
+.identityStrip {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 22px 0;
+  border-bottom: 4px solid var(--amarillo);
+}
+
+.stripGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 15px;
+}
+
+.stripItem strong {
+  display: block;
+  color: var(--amarillo);
+  font-size: 1.15rem;
+}
+
+.stripItem span {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 960px) {
+  .stripGrid {
+    grid-template-columns: 1fr;
+  }
+}
