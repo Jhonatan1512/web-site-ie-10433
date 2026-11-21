@@ -4,7 +4,7 @@ export const FACULTY_HEADER = {
   description:
     "Profesionales titulados en Educación Primaria comprometidos con el logro de aprendizajes y la formación integral de nuestros estudiantes en Lajas.",
 };
-
+ 
 export const FACULTY_FILTERS = [
   { id: "todos", label: "Todos" },
   { id: "direccion", label: "Dirección" },

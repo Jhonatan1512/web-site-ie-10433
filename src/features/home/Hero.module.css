@@ -1,21 +1,22 @@
 .heroSection {
   position: relative;
-  background: url('/assets/fachada.jpg') left center/cover no-repeat;
+  background: url('/assets/galeria/fachada.jpg') left center/cover no-repeat;
   background-color: var(--primary);
-  min-height: 580px; 
+  min-height: 620px;
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-bottom: 44px;
 }
 
 .heroOverlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    90deg,
-    rgba(10, 46, 31, 0.18) 0%,
-    rgba(15, 76, 51, 0.82) 46%,
-    rgba(12, 62, 41, 0.97) 100%
+    102deg,
+    rgba(9, 44, 29, 0.34) 0%,
+    rgba(12, 60, 40, 0.72) 44%,
+    rgba(10, 50, 33, 0.96) 100%
   );
 }
 
@@ -23,41 +24,115 @@
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 0.95fr 1.15fr;
-  align-items: center;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 24px;
+  align-items: stretch;
   width: 100%;
-  padding: 72px 24px;
+  padding: 56px 24px 0 24px;
 }
 
 .heroTextBox {
   color: #FFFFFF;
-}
-
-.heroTag {
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(245, 200, 76, 0.55);
-  color: var(--gold-soft);
-  padding: 5px 15px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  margin-bottom: 18px;
-}
-
-.heroTextBox h1 {
-  font-size: 2.95rem;
-  line-height: 1.14;
-  font-weight: 800;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 54px;
 }
 
 .heroTextBox p {
   font-size: 1.06rem;
-  line-height: 1.7;
+  line-height: 1.72;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 2px 12px rgba(6, 28, 18, 0.65);
+  max-width: 580px;
+}
+
+.heroTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 200, 76, 0.5);
+  color: var(--gold-soft);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.titleStage {
+  display: grid;
+  margin-bottom: 14px;
+}
+
+.titleGhost,
+.titleLive {
+  grid-area: 1 / 1;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.75rem;
+  line-height: 1.13;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.titleGhost {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.titleLive {
+  background: linear-gradient(180deg, #FFFFFF 60%, #DCECE4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pencilCursor {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 6px;
+  -webkit-text-fill-color: initial;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.pencilWriting {
+  animation: pencilScribble 0.32s ease-in-out infinite alternate;
+}
+
+.pencilIdle {
+  animation: pencilRest 2.2s ease-in-out infinite;
+}
+
+@keyframes pencilScribble {
+  0% {
+    transform: translate(0, -4px) rotate(-8deg);
+  }
+  100% {
+    transform: translate(3px, 2px) rotate(6deg);
+  }
+}
+
+@keyframes pencilRest {
+  0%, 100% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-4deg);
+  }
+}
+
+.heroTextBox p {
+  font-size: 1.06rem;
+  line-height: 1.72;
   margin-bottom: 32px;
   color: rgba(255, 255, 255, 0.88);
+  max-width: 580px;
 }
 
 .heroActions {
@@ -67,24 +142,28 @@
 }
 
 @media (max-width: 960px) {
+  .heroSection {
+    min-height: auto;
+    padding-bottom: 36px;
+  }
+
   .heroGrid {
     grid-template-columns: 1fr;
     text-align: center;
+    padding: 40px 20px 56px 20px;
   }
 
-  .heroSpacer {
-    display: none;
+  .titleGhost,
+  .titleLive {
+    font-size: 2.1rem;
   }
 
-  .heroOverlay {
-    background: rgba(12, 62, 41, 0.88);
+  .heroTextBox p {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .heroActions {
     justify-content: center;
-  }
-
-  .heroTextBox h1 {
-    font-size: 2.15rem;
   }
 }

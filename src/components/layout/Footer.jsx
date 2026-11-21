@@ -176,7 +176,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Barra inferior */}
           <div className={styles.footerBottom}>
             <p>
               © {new Date().getFullYear()} {SCHOOL_INFO.name} - Lajas. Todos los derechos reservados.

@@ -1,145 +1,601 @@
-.carouselWrapper {
+.gallerySection {
   position: relative;
-  max-width: 920px;
-  margin: 0 auto;
+  overflow: hidden;
+}
+
+.filterBar {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
 }
 
-.carouselViewport {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 18px;
-  box-shadow: var(--shadow-lg);
+.filterChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 76, 51, 0.14);
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.24s ease;
+}
+
+.filterChip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.filterChipActive {
   background-color: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(15, 76, 51, 0.22);
 }
 
-.carouselTrack {
-  display: flex;
-  transition: transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+.filterChipActive:hover {
+  color: #FFFFFF;
 }
 
-.carouselSlide {
-  min-width: 100%;
+.filterCount {
+  font-size: 0.74rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background-color: rgba(15, 76, 51, 0.08);
+  color: inherit;
+}
+
+.filterChipActive .filterCount {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: 1.45fr 0.85fr;
+  gap: 26px;
+  align-items: stretch;
+}
+
+.featuredStage {
   position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 460px;
+  background-color: #0B3A26;
+  box-shadow: 0 22px 48px rgba(15, 76, 51, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(15, 76, 51, 0.12);
 }
 
-.carouselSlide img {
+.mediaLayer {
+  position: absolute;
+  inset: 0;
+  animation: stageFadeZoom 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.featuredImage {
   width: 100%;
-  height: 450px;
+  height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 6s ease;
 }
 
-.slideCaption {
+.featuredStage:hover .featuredImage {
+  transform: scale(1.04);
+}
+
+.stageScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 34, 23, 0.38) 0%,
+    rgba(8, 34, 23, 0.14) 42%,
+    rgba(7, 29, 20, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+.stageTopBar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 22px 24px;
+}
+
+.categoryGlassBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--gold-soft);
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.counterPill {
+  background: rgba(10, 38, 26, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.expandBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.expandBtn:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.06);
+}
+
+.stageBottomContent {
+  position: relative;
+  z-index: 3;
+  padding: 24px 28px 26px 28px;
+  color: #FFFFFF;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-soft);
+  margin-bottom: 8px;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.stageTitle {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.22;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.stageDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 600px;
+  margin-bottom: 18px;
+}
+
+.stageControlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.navButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.circleNavBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.circleNavBtn:hover {
+  background-color: #FFFFFF;
+  color: var(--primary);
+  transform: scale(1.05);
+}
+
+.lightboxTextBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  color: #FFFFFF;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.22s ease;
+}
+
+.lightboxTextBtn:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.progressTrack {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(11, 56, 37, 0.94));
-  color: #FFFFFF;
-  padding: 40px 28px 22px 28px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.16);
+  z-index: 4;
 }
 
-.slideCaption h3 {
-  color: var(--gold-soft);
-  font-size: 1.35rem;
-  margin-bottom: 4px;
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-soft), var(--accent));
+  animation: progressAdvance 5.5s linear forwards;
 }
 
-.slidePlaceholder {
-  height: 450px;
+.featuredStage:hover .progressFill {
+  animation-play-state: paused;
+}
+
+.playlistPanel {
+  background-color: var(--bg-surface);
+  border: 1px solid rgba(15, 76, 51, 0.10);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 14px 34px rgba(15, 76, 51, 0.06);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+.playlistHeader {
+  display: flex;
   align-items: center;
-  text-align: center;
-  padding: 36px;
-  color: #FFFFFF;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-/* Variaciones tonales elegantes dentro de la paleta dominante */
-.bgVerdeSlide {
-  background: linear-gradient(135deg, #0F4C33, #1D6F4D);
+.playlistTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
 }
 
-.bgNaranjaSlide {
-  background: linear-gradient(135deg, #165B3E, #0B3A26);
+.playlistHint {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
-.bgAmarilloSlide {
-  background: linear-gradient(135deg, #1F6E4C, #124831);
+.thumbList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
-.slideEmoji {
+.thumbCard {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  padding: 9px;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+  background-color: var(--bg-page);
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.thumbCard:hover {
+  background-color: var(--primary-tint);
+  transform: translateX(3px);
+}
+
+.thumbCardActive {
+  background-color: var(--primary-tint);
+  border-color: var(--primary);
+  box-shadow: 0 6px 16px rgba(15, 76, 51, 0.10);
+}
+
+.thumbMedia {
+  width: 74px;
+  height: 58px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--primary);
+}
+
+.thumbMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbInfo h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+  margin-bottom: 3px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.thumbInfo span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.artFallback {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.artFallbackPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  background-image: radial-gradient(#FFFFFF 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.artOrbOne {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  top: -60px;
+  right: -40px;
+  background: radial-gradient(circle, rgba(245, 200, 76, 0.34) 0%, transparent 70%);
+}
+
+.artOrbTwo {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  bottom: 20px;
+  left: -50px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 70%);
+}
+
+.artCenterEmblem {
+  position: relative;
+  z-index: 2;
   width: 96px;
   height: 96px;
-  border-radius: 24px;
-  background-color: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--gold-soft);
-  display: inline-flex;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  color: #F5C84C;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+  margin-bottom: 90px;
 }
 
-.carouselBtn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: var(--bg-surface);
-  color: var(--primary);
-  border: 1px solid var(--border-subtle);
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  font-size: 1.15rem;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: var(--shadow-md);
-  transition: all 0.25s ease;
-}
-
-.carouselBtn:hover {
-  background-color: var(--primary);
-  color: #FFFFFF;
-  transform: translateY(-50%) scale(1.06);
-}
-
-.prevBtn {
-  left: -22px;
-}
-
-.nextBtn {
-  right: -22px;
-}
-
-.carouselDots {
+.artMiniFallback {
+  width: 100%;
+  height: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
+  color: #F5C84C;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background-color: rgba(15, 76, 51, 0.22);
-  border: none;
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 24, 17, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeInModal 0.25s ease;
+}
+
+.lightboxCard {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  background-color: #0E3D29;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(7, 24, 17, 0.65);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: all 0.3s;
+  z-index: 5;
+  transition: background-color 0.2s ease;
 }
 
-.dot.active {
+.lightboxClose:hover {
   background-color: var(--accent);
-  width: 26px;
+}
+
+.lightboxMedia {
+  width: 100%;
+  height: 440px;
+  position: relative;
+}
+
+.lightboxMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lightboxBody {
+  padding: 24px 28px 28px 28px;
+}
+
+.lightboxBody h3 {
+  font-size: 1.45rem;
+  margin-bottom: 8px;
+}
+
+.lightboxBody p {
+  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+}
+
+@keyframes stageFadeZoom {
+  from {
+    opacity: 0.35;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes progressAdvance {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 960px) {
-  .prevBtn { left: 12px; }
-  .nextBtn { right: 12px; }
-  .carouselSlide img,
-  .slidePlaceholder { height: 320px; }
+  .showcaseGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredStage {
+    min-height: 400px;
+  }
+
+  .thumbList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-height: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .stageTitle {
+    font-size: 1.32rem;
+  }
+
+  .thumbList {
+    grid-template-columns: 1fr;
+  }
+
+  .lightboxMedia {
+    height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mediaLayer,
+  .progressFill,
+  .featuredImage {
+    animation: none;
+    transition: none;
+  }
 }

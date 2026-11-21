@@ -1,0 +1,35 @@
+export const CONTACT_DATA = {
+  tag: "Estamos para atenderte",
+  title: "Canales de Atención y Contacto",
+  subtitle:
+    "Resolvemos tus dudas sobre matrículas, traslados, horarios y actividades escolares con atención cercana a las familias de Lajas.",
+  statusBadge: "Atención en Secretaría • Turno Mañana",
+  institutionalTitle: "Información Institucional",
+  institutionalSubtitle:
+    "Comunícate directamente con nuestra dirección y secretaría por vía digital o visítanos a nuestro local institucional.",
+  phoneRaw: "+51900000000",
+  phoneDisplay: "+51 900 000 000",
+  emailDisplay: "contacto@ie10433lajas.edu.pe",
+  address: "Distrito de Lajas, Provincia de Chota, Cajamarca - Perú",
+  reference: "A pocos minutos de la Plaza de Armas de Lajas • Nivel Primaria (EBR)",
+  schedule: "Lunes a Viernes: 8:00 a.m. – 1:00 p.m.",
+  whatsappUrl: "https://wa.me/51900000000",
+  facebookUrl: "https://facebook.com",
+  mapsQueryUrl: "https://www.google.com/maps/search/?api=1&query=Lajas+Chota+Cajamarca+Peru",
+  mapsEmbedUrl: "https://www.google.com/maps?q=Lajas,+Chota,+Cajamarca,+Peru&output=embed",
+  topics: [
+    { id: "matriculas", label: "Matrículas y Vacantes" },
+    { id: "traslados", label: "Traslado Escolar" },
+    { id: "tramites", label: "Certificados y Trámites" },
+    { id: "general", label: "Consulta General" },
+  ],
+  grades: [
+    "No aplica / General",
+    "1° Grado de Primaria",
+    "2° Grado de Primaria",
+    "3° Grado de Primaria",
+    "4° Grado de Primaria",
+    "5° Grado de Primaria",
+    "6° Grado de Primaria",
+  ],
+};

@@ -11,7 +11,6 @@ export function Header() {
 
   return (
     <header className={styles.mainHeader}>
-      {/* Nivel 1: Barra institucional superior de extremo a extremo */}
       <div className={styles.topBar}>
         <div className={styles.topBarInner}>
           <div className={styles.topLeft}>
@@ -26,14 +25,16 @@ export function Header() {
           </div>
 
           <div className={styles.topRight}>
+            <span className={styles.locationTop}>
+              <MaterialIcon name="schedule" size={15} />
+              Lun - Vie • 8:00 a.m. - 1:00 p.m.
+            </span>
             <Link to="/preguntas">Preguntas Frecuentes</Link>
-            <Link to="/contactos">Contáctanos</Link>
             <span className={styles.badgeNivel}>Nivel Primaria</span>
           </div>
         </div>
       </div>
 
-      {/* Nivel 2: Navegación principal limpia */}
       <nav className={styles.navMain} aria-label="Navegación principal">
         <Link to="/" className={styles.brandBox} onClick={closeMenu}>
           <img
@@ -71,7 +72,7 @@ export function Header() {
         </ul>
 
         <div className={styles.navActions}>
-          <NavLink
+          <NavLink 
             to="/matriculas"
             className={({ isActive }) =>
               `${styles.ctaMatricula} ${isActive ? styles.ctaMatriculaActive : ""}`

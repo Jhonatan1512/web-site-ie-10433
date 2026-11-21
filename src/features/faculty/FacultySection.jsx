@@ -12,7 +12,7 @@ export function FacultySection() {
     selectedGrade === "todos"
       ? FACULTY_MEMBERS
       : FACULTY_MEMBERS.filter((teacher) => teacher.gradeId === selectedGrade);
-
+ 
   return (
     <section id="plana-docente" className="section-padding">
       <div className="container">
@@ -22,7 +22,6 @@ export function FacultySection() {
           description={FACULTY_HEADER.description}
         />
 
-        {/* Filtro por grado */}
         <div className={styles.filterBar} role="tablist" aria-label="Filtrar docentes por grado">
           {FACULTY_FILTERS.map((filter) => (
             <button
@@ -40,11 +39,9 @@ export function FacultySection() {
           ))}
         </div>
 
-        {/* Grid de tarjetas compactas */}
         <div className={styles.cardsGrid}>
           {visibleTeachers.map((docente) => (
             <article className={styles.card} key={docente.id}>
-              {/* Avatar circular sobresaliente */}
               <div className={styles.avatarCircle}>
                 {docente.photo ? (
                   <img src={docente.photo} alt={docente.name} className={styles.avatarImg} />
@@ -59,7 +56,7 @@ export function FacultySection() {
               <span className={styles.gradeLabel}>{docente.gradeTitle}</span>
 
               <div className={styles.metaBox}>
-                <span className={styles.specialtyText}>{docente.specialty}</span>
+                
                 <span className={styles.expText}>
                   <MaterialIcon name="award" size={15} />
                   <span>{docente.experience}</span>
@@ -80,7 +77,6 @@ export function FacultySection() {
         </div>
       </div>
 
-      {/* Modal con trayectoria completa y contacto directo */}
       {activeTeacher && (
         <div
           className={styles.modalBackdrop}
@@ -118,13 +114,12 @@ export function FacultySection() {
             </div>
 
             <div className={styles.modalTags}>
-              <span className={styles.modalTag}>{activeTeacher.specialty}</span>
+              
               <span className={styles.modalTag}>{activeTeacher.experience}</span>
             </div>
 
             <p className={styles.modalStory}>{activeTeacher.story}</p>
 
-            {/* Contacto directo del docente */}
             <div className={styles.modalContactBox}>
               <span className={styles.modalContactTitle}>Contacto Institucional</span>
 

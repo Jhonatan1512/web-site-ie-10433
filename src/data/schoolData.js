@@ -9,7 +9,7 @@ export const SCHOOL_INFO = {
   whatsappNumber: "51900000000",
   facebookUrl: "https://www.facebook.com",
   logo: "/assets/Insignia.png",
-  facadeImg: "/assets/fachada.jpg",
+  facadeImg: "/assets/galeria//fachada.jpg",
 }; 
 
 export const NAV_LINKS = [
@@ -22,9 +22,33 @@ export const NAV_LINKS = [
 ];
  
 export const IDENTITY_ITEMS = [
-  { title: "1° a 6° Grado", subtitle: "Educación Primaria" },
-  { title: "Formación en Valores", subtitle: "Estudio, Disciplina y Trabajo" },
-  { title: "Comunidad Lajeña", subtitle: "Chota - Cajamarca" },
+  {
+    icon: "teacher",
+    badge: "Nivel Primaria",
+    title: "1° a 6° Grado",
+    subtitle: "Educación Básica Regular",
+    description: "Atención pedagógica personalizada por ciclos en turno mañana.",
+    link: "/matriculas",
+    linkLabel: "Ver vacantes",
+  },
+  {
+    icon: "verified",
+    badge: "Identidad",
+    title: "Formación en Valores",
+    subtitle: "Estudio, Disciplina y Trabajo",
+    description: "Convivencia armoniosa, civismo y acompañamiento familiar continuo.",
+    link: "/quienes-somos",
+    linkLabel: "Nuestra historia",
+  },
+  {
+    icon: "location",
+    badge: "Ubicación",
+    title: "Comunidad Lajeña",
+    subtitle: "Lajas • Chota - Cajamarca",
+    description: "Referente educativo comprometido con el desarrollo de nuestra niñez.",
+    link: "/nuestra-escuela",
+    linkLabel: "Explorar plantel",
+  },
 ];
 
 export const VALUES_LIST = [
@@ -34,76 +58,7 @@ export const VALUES_LIST = [
   { icon: "respect", label: "Respeto y Empatía" },
 ];
 
-export const FACULTY_LIST = [
-  {
-    icon: "director",
-    badge: "Dirección",
-    role: "Director(a) Institucional",
-    description: "Liderazgo pedagógico y gestión administrativa del plantel.",
-  },
-  {
-    icon: "teacher",
-    badge: "1° Grado",
-    role: "Docente de Primer Grado",
-    description: "Iniciación a la lectura, escritura y pensamiento matemático.",
-  },
-  {
-    icon: "teacher",
-    badge: "2° Grado",
-    role: "Docente de Segundo Grado",
-    description: "Fortalecimiento de la comprensión lectora y convivencia.",
-  },
-  {
-    icon: "teacher",
-    badge: "3° Grado",
-    role: "Docente de Tercer Grado",
-    description: "Desarrollo de habilidades comunicativas y trabajo en equipo.",
-  },
-  {
-    icon: "teacher",
-    badge: "4° Grado",
-    role: "Docente de Cuarto Grado",
-    description: "Exploración científica, arte y razonamiento lógico.",
-  },
-  {
-    icon: "teacher",
-    badge: "5° y 6° Grado",
-    role: "Docentes de Quinto y Sexto",
-    description: "Consolidación académica para el paso al nivel secundario.",
-  },
-];
-
-export const GALLERY_SLIDES = [
-  {
-    type: "image",
-    src: "/assets/fachada.jpg",
-    alt: "Frontis I.E. 10433 Lajas",
-    title: "Infraestructura de la I.E. N° 10433",
-    description: "Nuestros pabellones y áreas verdes en el distrito de Lajas.",
-  },
-  {
-    type: "placeholder",
-    bgClass: "bg-verde-slide",
-    icon: "trophy",
-    title: "Actuaciones Cívicas y Desfiles Escolares",
-    description: "Nuestros niños y niñas demostrando civismo y amor por nuestra patria.",
-  },
-  {
-    type: "placeholder",
-    bgClass: "bg-naranja-slide",
-    icon: "study",
-    title: "Aprendizaje Activo en Aulas",
-    description: "Dinámicas grupales, lectura recreativa y proyectos escolares de 1° a 6° grado.",
-  },
-  {
-    type: "placeholder",
-    bgClass: "bg-amarillo-slide",
-    icon: "sports",
-    title: "Olimpiadas Deportivas y Recreación",
-    description: "Fomentando el deporte, la salud y el compañerismo entre todos los grados.",
-  },
-];
-
+ 
 export const FAQ_LIST = [
   {
     question: "¿Qué nivel educativo atiende la I.E. N° 10433?",
